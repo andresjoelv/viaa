@@ -5,4 +5,4 @@ Project 2
 Andres Villamarin
 Ahmed Ahmed
 Veronica Sipos
-Ifeanyi Owah
+Ifeanyi Owah   
