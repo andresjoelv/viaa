@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Project.findAll({}).then(function(dbExamples) {
       res.render("index", {
         msg: "Welcome!",
         examples: dbExamples
@@ -11,10 +11,19 @@ module.exports = function(app) {
     });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
+  // Load new project page
+  app.get("/new", function(req, res) {
+    db.Project.findAll({}).then(function(dbExamples) {
+      res.render("new", {
+        examples: dbExamples
+      });
+    });
+  });
+
+  // Load project page and pass in an project by id
+  app.get("/project/:id", function(req, res) {
+    db.Project.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
+      res.render("project", {
         example: dbExample
       });
     });

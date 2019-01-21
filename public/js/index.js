@@ -1,47 +1,47 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
+var $projectName = $("#project-name");
+var $projectDescription = $("#project-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  saveProject: function(project) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "api/projects",
+      data: JSON.stringify(project)
     });
   },
-  getExamples: function() {
+  getProjects: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/projects",
       type: "GET"
     });
   },
-  deleteExample: function(id) {
+  deleteProject: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/projects/" + id,
       type: "DELETE"
     });
   }
 };
 
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
+// refreshProjects gets new examples from the db and repopulates the list
+var refreshProjects = function() {
+  API.getProjects().then(function(data) {
+    var $projects = data.map(function(project) {
       var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+        .text(project.text)
+        .attr("href", "/project/" + project.id);
 
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
-          "data-id": example.id
+          "data-id": project.id
         })
         .append($a);
 
@@ -55,7 +55,7 @@ var refreshExamples = function() {
     });
 
     $exampleList.empty();
-    $exampleList.append($examples);
+    $exampleList.append($projects);
   });
 };
 
@@ -64,22 +64,22 @@ var refreshExamples = function() {
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var project = {
+    text: $projectName.val().trim(),
+    description: $projectDescription.val().trim()
   };
 
-  if (!(example.text && example.description)) {
+  if (!(project.text && project.description)) {
     alert("You must enter an example text and description!");
     return;
   }
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
+  API.saveProject(project).then(function() {
+    refreshProjects();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $projectName.val("");
+  $projectDescription.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -89,8 +89,8 @@ var handleDeleteBtnClick = function() {
     .parent()
     .attr("data-id");
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+  API.deleteProject(idToDelete).then(function() {
+    refreshProjects();
   });
 };
 

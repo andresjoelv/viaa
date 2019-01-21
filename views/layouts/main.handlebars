@@ -3,12 +3,95 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <title>Home Page</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 </head>
 
 <body>
+  <!-- https://codepen.io/zackahl/pen/RgGaPL -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Nav Header -->
+  <a href="#"><span class="fas fa-bars menus"></span></a>
+  <a class="navbar-brand" href="#"><span class="fas fa-home"></span><span class="link"> Home</span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- Nav Collapse -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <!-- Nav Left -->
+    <ul class="navbar-nav mr-auto">
+      <!-- Products -->
+      <li class="nav-item">
+        <a href="#" class="nav-link" data-toggle="dropdown" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <span class="links">My Tasks</span>
+        </a>
+      </li>
+      <!-- Services -->
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="dropdown" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">
+          <span class="links">Inbox</span>
+        </a>
+      </li>
+      <!-- About -->
+      <li class="nav-item"><a class="nav-link" href="#"><span class="links"> Dashboard</span></a></li>
+      <!-- New -->
+      <!-- <li class="nav-item"><a class="nav-link" href="#"><span class="fas fa-plus-circle"></span><span class="link"> Contact</span></a></li> -->
+      
+      <div class="dropdown">
+          <button class="btn fas fa-plus-circle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item fas fa-clipboard-check" href="/new"> Project</a>
+            <a class="dropdown-item fas fa-address-book" href="#"> Team</a>
+            <a class="dropdown-item fas fa-check-circle" href="#"> Task</a>
+          </div>
+        </div>
+    </ul>
+    <!-- Nav Right -->
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><span class="fa fa-search"></span></button>
+    </form>
+  </div>
+</nav> <!-- end of navbar -->
+
+<!-- Jumbotron -->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="dropdown">
+      <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Customer appreciation event <span class="fas fa-chevron-down" ></span>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </div>
+    <!-- secondary nav -->
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Calendar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Progress</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Files</a>
+      </li>
+    </ul> <!-- end of secondary nav -->
+  </div> <!-- end container -->
+</div>
   {{{body}}}
 </body>
 
