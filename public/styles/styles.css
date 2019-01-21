@@ -140,11 +140,18 @@ body {
 
 .jumbotron .dropdown button {
   background: white;
-  color: rgb(3, 169, 211);
+  color: black;
   border: none;
   font-weight: bold;
   font-size: 20px;
   padding: 0 !important;
+}
+
+.jumbotron .container .dropdown button:active {
+  background: white;
+  color: black;
+  text-decoration: none;
+  box-shadow: none !important;
 }
 
 .fa-chevron-down {
