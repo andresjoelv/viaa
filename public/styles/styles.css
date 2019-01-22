@@ -15,7 +15,8 @@ body {
 .navbar {
   border: 0;
   border-radius: 0;
-  background: linear-gradient(to right, #fa2424, #f8248b);
+  /*background: linear-gradient(to right, #fa2424, #f8248b);*/
+  background-color: rgb(109, 204, 172) !important;
 }
 
 .navbar .nav li > a, .navbar .navbar-brand {
@@ -173,3 +174,71 @@ body {
 .jumbotron .container .nav .nav-item .nav-link:visited {
   color: grey;
 }
+
+/* create new project */
+#main {
+  background-color: rgb(109, 204, 172);
+  width: 1250px;
+  height: 620px;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.left-half {
+  float: left;
+  color: white;
+  font-family: 'Muli', sans-serif;
+  margin-top: 160px;
+  margin-left: 10px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+.right-half {
+  color: rgb(97, 97, 97);
+  font-family:'Muli', sans-serif;
+  float: right;
+  margin-top: 80px;
+  margin-right: 180px;
+}
+
+#login {
+  color: rgb(97, 97, 97);
+  margin-top: 20px;
+  font-family: 'Muli', sans-serif;
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  padding: 20px; 
+  width: 100px;
+  height: 30px; 
+  padding: 2px;
+  margin-left: 86%;
+}
+
+#form {
+  background: rgb(255, 255, 255);
+  width: 45%;
+  height: 500px;
+  padding: 35px;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+input[type=text] {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #696969;
+  width: 80%;
+}
+
+#add-stage {
+  border-radius: 30px;
+  background-color: rgb(47, 160, 71);
+  color: white;
+}
+
