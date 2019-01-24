@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -18,8 +19,28 @@
   <!-- https://codepen.io/zackahl/pen/RgGaPL -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <!-- Nav Header -->
-  <a href="#"><span class="fas fa-bars menus"></span></a>
-  <a class="navbar-brand" href="#"><span class="fas fa-home"></span><span class="link"> Home</span></a>
+  {{!-- <a href="#"><span class="fas fa-bars menus"></span></a> --}}
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="/new">Projects</a>
+  <a href="#">Archives</a>
+  <a href="#">Users</a>
+  <a href="#">Admin</a>
+</div>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+
+
+  <a class="navbar-brand" href="/"><span class="fas fa-home"></span><span class="link"> Home</span></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -30,17 +51,17 @@
       <!-- Products -->
       <li class="nav-item">
         <a href="#" class="nav-link" data-toggle="dropdown" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          <span class="links">My Tasks</span>
+          <span class="links">All Tasks</span>
         </a>
       </li>
       <!-- Services -->
-      <li class="nav-item">
+      {{!-- <li class="nav-item">
         <a class="nav-link" data-toggle="dropdown" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">
           <span class="links">Inbox</span>
         </a>
-      </li>
+      </li> --}}
       <!-- About -->
-      <li class="nav-item"><a class="nav-link" href="#"><span class="links"> Dashboard</span></a></li>
+      {{!-- <li class="nav-item"><a class="nav-link" href="#"><span class="links"> Dashboard</span></a></li> --}}
       <!-- New -->
       <!-- <li class="nav-item"><a class="nav-link" href="#"><span class="fas fa-plus-circle"></span><span class="link"> Contact</span></a></li> -->
       
@@ -48,7 +69,7 @@
           <button class="btn fas fa-plus-circle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item fas fa-clipboard-check" href="/new"> Project</a>
+            <a class="dropdown-item fas fa-clipboard-check" href="/new"> New Project</a>
             <a class="dropdown-item fas fa-address-book" href="#"> Team</a>
             <a class="dropdown-item fas fa-check-circle" href="#"> Task</a>
           </div>
@@ -63,7 +84,7 @@
 </nav> <!-- end of navbar -->
 
 <!-- Jumbotron -->
-<div class="jumbotron jumbotron-fluid">
+{{!-- <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <div class="dropdown">
       <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -78,7 +99,7 @@
     <!-- secondary nav -->
     <ul class="nav justify-content-center">
       <li class="nav-item">
-        <a class="nav-link active" href="#">List</a>
+        <a class="nav-link active" href="/new">List</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Calendar</a>
@@ -91,7 +112,7 @@
       </li>
     </ul> <!-- end of secondary nav -->
   </div> <!-- end container -->
-</div>
+</div> --}}
   {{{body}}}
 </body>
 

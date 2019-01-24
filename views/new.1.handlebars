@@ -1,0 +1,33 @@
+<div id="main">
+        <section class="container">
+            <div class="left-half">
+                <article>
+                    <h1>Create a New Project</h1>
+                    <hr>
+                    <p>Keep track of your projects to ensure nothing gets missed!<br>Complete the form on the right to add a new project.</p>
+                </article>
+                <img src="/img/image.png" alt="production">
+            </div>
+            <div class="right-half" id="form">
+                <form name="create-project">
+                        <h4>Project Name:</h4>
+                        <input id="name" type="text" class="validate" required>
+                        <br><br><br><br>
+                        <h4>Description:</h4>
+                        <input id="description" type="text" class="validate" required>
+                        <br><br><br><br>
+                        <h4>Contributors:</h4>
+                        <input id="stage" type="text" class="validate" required>
+                </form>
+                <div class="new-stage"></div>
+                <br><br><br><br>
+              
+                <button onclick="submitButtonClicked()" type="button" id="add-stage" class="btn btn-success">Add Project</button>
+            </div>
+            
+        </section>
+     </div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{{!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> --}}
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="/js/index.js"></script>
