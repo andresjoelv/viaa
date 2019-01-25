@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -18,8 +19,8 @@
   <!-- https://codepen.io/zackahl/pen/RgGaPL -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <!-- Nav Header -->
-  <a href="#"><span class="fas fa-bars menus"></span></a>
-  <a class="navbar-brand" href="#"><span class="fas fa-home"></span><span class="link"> Home</span></a>
+  <a onclick="openNav()"  href="#"><span class="fas fa-bars menus"></span></a>
+  <a class="navbar-brand" href="/"><span class="fas fa-home"></span><span class="link"> Home</span></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -29,7 +30,7 @@
     <ul class="navbar-nav mr-auto">
       <!-- Products -->
       <li class="nav-item">
-        <a href="#" class="nav-link" data-toggle="dropdown" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+        <a href="/view" class="nav-link">
           <span class="links">My Tasks</span>
         </a>
       </li>
@@ -61,6 +62,24 @@
     </form>
   </div>
 </nav> <!-- end of navbar -->
+
+<!-- sidebar -->
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="/new">Projects</a>
+  <a href="#">Archives</a>
+  <a href="#">Users</a>
+  <a href="#">Admin</a>
+</div>
+<script>
+function openNav() {
+  console.log("hey");
+  document.getElementById("mySidenav").style.width = "250px";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script> <!-- end of side bar -->
 
 <!-- Jumbotron -->
 <div class="jumbotron jumbotron-fluid">
@@ -96,3 +115,6 @@
 </body>
 
 </html>
+
+
+  

@@ -30,34 +30,39 @@ var API = {
   }
 };
 
+// redirect to list of tasks
+// var toTasks = function() {
+//   API.getTasks();
+// }
+
 // refreshProjects gets new examples from the db and repopulates the list
-var refreshProjects = function() {
-  API.getProjects().then(function(data) {
-    var $projects = data.map(function(project) {
-      var $a = $("<a>")
-        .text(project.text)
-        .attr("href", "/project/" + project.id);
+// var refreshProjects = function() {
+//   API.getProjects().then(function(data) {
+//     var $projects = data.map(function(project) {
+//       var $a = $("<a>")
+//         .text(project.text)
+//         .attr("href", "/project/" + project.id);
 
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": project.id
-        })
-        .append($a);
+//       var $li = $("<li>")
+//         .attr({
+//           class: "list-group-item",
+//           "data-id": project.id
+//         })
+//         .append($a);
 
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
+//       var $button = $("<button>")
+//         .addClass("btn btn-danger float-right delete")
+//         .text("ｘ");
 
-      $li.append($button);
+//       $li.append($button);
 
-      return $li;
-    });
+//       return $li;
+//     });
 
-    $exampleList.empty();
-    $exampleList.append($projects);
-  });
-};
+//     $exampleList.empty();
+//     $exampleList.append($projects);
+//   });
+// };
 
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
@@ -75,12 +80,22 @@ var handleFormSubmit = function(event) {
   }
 
   API.saveProject(project).then(function() {
-    refreshProjects();
+    submitPost();
   });
 
   $projectName.val("");
   $projectDescription.val("");
-};
+}
+
+// Submits a new post and brings user to blog page upon completion
+function submitPost() {
+  $.ajax({
+    url: "api/posts",
+    type: "GET"
+  }).then( function() {
+    window.location.href = "/view";
+  });
+}
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
