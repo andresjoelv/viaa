@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Sipos1995!",
+    "password": "password",
     "database": "tlinedb",
     "host": "localhost",
     "dialect": "mysql"
