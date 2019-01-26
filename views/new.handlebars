@@ -10,28 +10,45 @@
             </div>
             <div class="right-half" id="form">
                 <form name="create-project">
-                    <h6 class="projectLabel">Project Name:</h6>
-                    <input id="project-name" type="text" class="validate" required>
-                    <br><br>
-                    <h6 class="teamLabel">Team:</h6>
-                    <div class="team-options">
-                    <select id="drop-down" name="team">
-                        <option value="marketing">Marketing</option>
-                        <option value="client">Printing</option>
-                        <option value="client">Design</option>
-                        <option value="all-users">All Users</option>
-                    </select>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h6 class="projectLabel">Project Name:</h6>
+                            <input id="project-name" type="text" class="validate" required>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="teamLabel">Team:</h6>
+                            <div class="team-options">
+                            <select id="drop-down" name="team">
+                                <option value="marketing">Marketing</option>
+                                <option value="client">Printing</option>
+                                <option value="client">Design</option>
+                                <option value="all-users">All Users</option>
+                            </select>
+                        </div>
+                        </div>
                     </div>
                     <br>
                     <h6>Description:</h6>
                     <input id="project-description" type="text" class="validate" required>
-                    <br><br>
+                    <br>
                     <!-- stages -->
-                    <label for="game-input">Add a stage!</label>
-                    <input type="text" id="game-input"><br>
+                    <h6 for="game-input">Add a stage!</h6>
+                    {{!-- <input type="text" id="game-input"><br>
                     <!-- Button triggers new stage to be added -->
-                    <input id="add-game" type="submit" value="Submit">
-                    <div id="btns-view"></div>
+                    <input id="add-game" type="submit" value="Submit"> --}}
+                    {{!-- <div id="btns-view"></div> --}}
+                    <br>
+                    <div class="drag-container">
+                        <div class="drag-box" id="item1">Quote</div>
+                        <div class="drag-box" id="item2">Design</div>
+                        <div class="drag-box" id="item3">Proof</div>
+                        <div class="drag-box" id="item4">Approved</div>
+                        <div class="drag-box" id="item5">Production</div>
+                        <div class="drag-box" id="item5">Install</div>
+                        <div class="drag-box" id="item5">Built</div>
+                    </div>
+                    <br>
+
                     <!-- end stages -->
                     <p>LAYOUT</p>
                     <input type="radio" name="view" value="public"> <i class="fas fa-list-ul"></i> List View - Organize your work in an itemized list.
@@ -43,11 +60,12 @@
                     <br>
                     <input type="radio" name="privacy" value="public"> <i class="fas fa-lock"></i> Private to project members
                     <br />
-                    <button type="button" id="submit" class="btn btn-success">Create Project</button>
+                    <button type="button" id="submit" style="margin-top: 15px;" class="btn btn-success">Create Project</button>
                 </form>
             </div>
         </section>
      </div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="js/dragonfly.js"></script>
 <script src="/js/index.js"></script>

@@ -4,8 +4,6 @@ var $projectDescription = $("#project-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
-
-
 //calendar
 var $calendarBtn = $("#calendarbtn");
 
