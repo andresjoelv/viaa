@@ -4,6 +4,11 @@ var $projectDescription = $("#project-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
+
+
+//calendar
+var $calendarBtn = $("#calendarbtn");
+
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveProject: function(project) {
@@ -109,6 +114,41 @@ var handleDeleteBtnClick = function() {
   });
 };
 
+
+
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+// stages
+var games = [];
+
+/*
+* display buttons
+*/
+function renderButtons(){
+  $("#btns-view").empty();
+
+  games.forEach( topic => {
+      var a = $("<button>")
+      
+      a.addClass("game");
+      a.attr("data-name", topic);
+      a.text(topic);
+      $("#btns-view").append(a);
+  });
+}
+
+/*
+*   add button
+*/
+$("#add-game").on("click", function(e){
+  e.preventDefault();
+
+  var game = $("#game-input").val().trim();
+
+  games.push(game);
+
+  renderButtons();
+
+});

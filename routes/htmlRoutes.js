@@ -17,9 +17,19 @@ module.exports = function(app) {
     });
   });
 
-  // Load new project page
+  // Load view project page
   app.get("/view", function(req, res) {
     res.render("view");
+  });
+
+  // Load view project page
+  app.get("/calendar", function(req, res) {
+    res.render("calendar");
+  });
+
+  // Load view project page
+  app.get("/edit", function(req, res) {
+    res.render("edit");
   });
 
 
